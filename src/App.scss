@@ -1,3 +1,12 @@
-.app {
-  color: red;
+:global {
+  body,
+  html,
+  #app {
+    height: 100%;
+    margin: 0;
+  }
+}
+.page {
+  height: 100%;
+  margin: 20px;
 }

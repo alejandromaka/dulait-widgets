@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
 
 const publicPath = '/scripts/';
@@ -41,13 +42,15 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    publicPath,
+    hot: true,
     noInfo: true,
+    publicPath,
     stats: {
       colors: true
     }
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new FlowBabelWebpackPlugin()
   ]
 };
